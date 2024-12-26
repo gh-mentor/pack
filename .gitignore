@@ -1,0 +1,14 @@
+# Exclude object files
+*.o
+
+# Exclude the executable
+task
+
+# Exclude other temporary or build files
+*.exe
+*.out
+*.log
+
+
+# exclude the build directory
+build/
