@@ -36,6 +36,14 @@ jobs:
       run: echo "C:\\msys64\\mingw64\\bin" >> $env:GITHUB_PATH
       shell: pwsh
 
+    - name: Build the code
+      run: |
+        mkdir build
+        cd build
+        cmake ../src -G "MinGW Makefiles"
+        mingw32-make
+      shell: bash
+
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
