@@ -25,7 +25,7 @@ int main()
     Details:
     - Use a 'for loop' to to simulate a workload by iterating from the given workload value down to 1. 
     - For each iteration, it performs the following steps:
-        1) Generates a random sleep time between 0.5 and 1.5 seconds.
+        1) Generates a random sleep time between 0.75 and 1.5 seconds.
         2) Pauses the execution for the generated sleep time.
         3) Prints a message indicating the completion of the current step.
     Errors:
@@ -42,7 +42,7 @@ int main()
             */
             std::random_device rd;
             std::mt19937 gen(rd());
-            std::uniform_real_distribution<double> dis(0.5, 1.5);
+            std::uniform_real_distribution<double> dis(0.75, 1.5);
             double sleepTime = dis(gen);
             std::this_thread::sleep_for(std::chrono::duration<double>(sleepTime));
             // Log the completion message
