@@ -8,5 +8,5 @@ void execute(std::function<void(int)> t, int load) {
     std::thread worker(std::move(task), load);
     worker.join();
     future.get();
-    std::cout << "Task completed." << '\n';
+    std::cout << "execute: Task completed." << '\n';
 }
