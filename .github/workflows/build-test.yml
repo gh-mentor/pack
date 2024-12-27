@@ -24,8 +24,9 @@ jobs:
           mingw-w64-x86_64-cmake
           mingw-w64-x86_64-make
 
-    - name: Initial clean build directory
-      run: if (Test-Path -Path build) { Remove-Item -Recurse -Force build }
+    - name: Add MSYS2 to PATH
+      run: echo "C:\\msys64\\mingw64\\bin" >> $env:GITHUB_PATH
+      shell: pwsh
 
     - name: Configure CMake
       run: cmake -G "MinGW Makefiles" -B build
@@ -42,7 +43,4 @@ jobs:
       env:
         VERBOSE: 1
 
-    # Always remove the build directory regardless of the outcome
-    - name: Final clean build directory
-      if: always()
-      run: Remove-Item -Recurse -Force build
+
