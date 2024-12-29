@@ -28,3 +28,7 @@ mingw32-make
 ## Run the test (PowerShell)
 
 .\test_task.exe --success
+
+## Return to the root directory
+
+cd ..
