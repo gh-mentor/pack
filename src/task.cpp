@@ -16,7 +16,7 @@ Exceptions:
 void execute(std::function<void(int)> t, int load) {
     std::packaged_task<void(int)> task(t);
     std::future<void> future = task.get_future();
-    std::thread worker(std::move(task), load);
+    std::thread worker(task, load);
     worker.join();
     try {
         future.get();
