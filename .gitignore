@@ -9,6 +9,8 @@ task
 *.out
 *.log
 
+# Exclude the .vscode folder
+.vscode/
 
 # exclude the build directory
 build/
