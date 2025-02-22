@@ -19,7 +19,7 @@ git commit -m "Updated"
 git push origin main
 
 # echo a message to the terminal window
-echo "Changes synchronized between local and remote repository."
+Write-Output "Changes synchronized between local and remote repository."
 
 
 
