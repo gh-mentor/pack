@@ -18,11 +18,5 @@ void execute(std::function<void(int)> t, int load) {
     std::future<void> future = task.get_future();
     std::thread worker(std::move(task), load);
     worker.join();
-    try {
-        future.get();
-    } catch (const std::exception& e) {
-        std::cerr << "Task threw an exception: " << e.what() << '\n';
-        throw;
-    }
     std::cout << "Task completed." << '\n';
 }
